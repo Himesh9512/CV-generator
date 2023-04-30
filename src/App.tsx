@@ -9,7 +9,7 @@ import { emptyCv } from "./utils/emptyCv";
 const App: FC = () => {
 	const [cvState, setCvState] = useState<CV>(emptyCv);
 	return (
-		<div className="">
+		<div className="max-w-full">
 			<Main />
 			<Footer />
 		</div>
