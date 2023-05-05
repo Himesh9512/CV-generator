@@ -7,7 +7,6 @@ import Stack from "@mui/material/Stack";
 import Divider from "@mui/material/Divider";
 
 import { CV } from "../../types/cv_interface";
-import { FormEvent } from "react";
 import { AddItem, InputChange, RemoveItem } from "../../types/functions_type";
 
 interface FormProps {

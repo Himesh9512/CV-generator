@@ -3,7 +3,6 @@ import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 
 import { Education } from "../../../types/cv_interface";
-import { FormEvent } from "react";
 import { InputChange, RemoveItem } from "../../../types/functions_type";
 
 interface EducationProps {

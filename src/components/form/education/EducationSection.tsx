@@ -1,4 +1,3 @@
-import { FormEvent } from "react";
 import { Education } from "../../../types/cv_interface";
 
 import SectionWrapper from "../SectionWrapper";
