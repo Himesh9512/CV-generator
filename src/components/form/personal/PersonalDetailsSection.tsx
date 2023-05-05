@@ -1,15 +1,12 @@
-import { FormEvent } from "react";
-import { PersonalDetails } from "../../../interfaces/cv_interface";
+import { PersonalDetails } from "../../../types/cv_interface";
 import SectionWrapper from "../SectionWrapper";
 
 import TextField from "@mui/material/TextField";
+import { InputChange } from "../../../types/functions_type";
 
 interface PersonalDetailsProps {
 	personalDetails: PersonalDetails;
-	handleInputChange: (
-		e: FormEvent<HTMLDivElement>,
-		section: "personalDetails" | "education" | "experience"
-	) => void;
+	handleInputChange: InputChange;
 }
 
 const PersonalDetailsSection = ({ personalDetails, handleInputChange }: PersonalDetailsProps) => {

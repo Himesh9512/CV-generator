@@ -1,4 +1,4 @@
-import { CV } from "../interfaces/cv_interface";
+import { CV } from "../types/cv_interface";
 
 export const emptyCv: CV = {
 	personalDetails: {

@@ -2,17 +2,15 @@ import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 
-import { Education } from "../../../interfaces/cv_interface";
+import { Education } from "../../../types/cv_interface";
 import { FormEvent } from "react";
+import { InputChange, RemoveItem } from "../../../types/functions_type";
 
 interface EducationProps {
 	index: number;
 	educationItem: Education;
-	handleInputChange: (
-		e: FormEvent<HTMLDivElement>,
-		section: "personalDetails" | "education" | "experience"
-	) => void;
-	handleRemoveItem: (index: number, section: "education" | "experience") => void;
+	handleInputChange: InputChange;
+	handleRemoveItem: RemoveItem;
 }
 
 const EducationItem = ({
@@ -38,7 +36,7 @@ const EducationItem = ({
 				margin="dense"
 				type="text"
 				value={course}
-				onInput={(e) => handleInputChange(e, "education")}
+				onInput={(e) => handleInputChange(e, "education", index)}
 			/>
 			<TextField
 				fullWidth
@@ -50,7 +48,7 @@ const EducationItem = ({
 				margin="dense"
 				type="text"
 				value={institute}
-				onInput={(e) => handleInputChange(e, "education")}
+				onInput={(e) => handleInputChange(e, "education", index)}
 			/>
 			<TextField
 				fullWidth
@@ -62,7 +60,7 @@ const EducationItem = ({
 				margin="dense"
 				type="text"
 				value={from}
-				onInput={(e) => handleInputChange(e, "education")}
+				onInput={(e) => handleInputChange(e, "education", index)}
 			/>
 			<TextField
 				fullWidth
@@ -74,7 +72,7 @@ const EducationItem = ({
 				margin="dense"
 				type="text"
 				value={to}
-				onInput={(e) => handleInputChange(e, "education")}
+				onInput={(e) => handleInputChange(e, "education", index)}
 			/>
 			<TextField
 				multiline
@@ -87,7 +85,7 @@ const EducationItem = ({
 				margin="normal"
 				type="text"
 				value={description}
-				onInput={(e) => handleInputChange(e, "education")}
+				onInput={(e) => handleInputChange(e, "education", index)}
 			/>
 			<Button variant="contained" color="error">
 				remove

@@ -5,20 +5,18 @@ import Container from "@mui/material/Container";
 
 import { FormEvent, useState } from "react";
 
-import { CV } from "../interfaces/cv_interface";
+import { CV } from "../types/cv_interface";
 import { emptyCv } from "../utils/emptyCv";
+import { InputChange, AddItem, RemoveItem } from "../types/functions_type";
 
 const Main = () => {
 	const [cvState, setCvState] = useState<CV>(emptyCv);
 
 	// handle all input field changes in form
-	const handleInputChange = (
-		e: FormEvent<HTMLDivElement>,
-		section: "personalDetails" | "education" | "experience"
-	): void => {
+	const handleInputChange: InputChange = (e, section, index) => {
 		const { id, value } = e.target as HTMLInputElement;
 
-		if (section == "personalDetails") {
+		if (section === "personalDetails" || typeof index === "undefined") {
 			setCvState((prevState) => ({
 				...prevState,
 				personalDetails: {
@@ -27,18 +25,28 @@ const Main = () => {
 				},
 			}));
 		} else {
-			setCvState(emptyCv);
+			setCvState((prevState) => ({
+				...prevState,
+				[section]: [
+					...prevState[section].slice(0, index),
+					{
+						...prevState[section][index],
+						[id]: value,
+					},
+					...prevState[section].slice(index + 1),
+				],
+			}));
 		}
 	};
 
 	// handle the add of new item in education/experience section
-	const handleAddItem = (section: "education" | "experience"): void => {
+	const handleAddItem: AddItem = (section): void => {
 		console.log("section: ", section);
 	};
 
 	// handle the add of new item in education/experience section
-	const handleRemoveItem = (index: number, section: "education" | "experience"): void => {
-		console.log("index: ", index, " section: ", section);
+	const handleRemoveItem: RemoveItem = (id, section): void => {
+		console.log("id: ", id, " section: ", section);
 	};
 
 	return (

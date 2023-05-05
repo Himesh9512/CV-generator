@@ -6,17 +6,15 @@ import Box from "@mui/material/Box";
 import Stack from "@mui/material/Stack";
 import Divider from "@mui/material/Divider";
 
-import { CV } from "../../interfaces/cv_interface";
+import { CV } from "../../types/cv_interface";
 import { FormEvent } from "react";
+import { AddItem, InputChange, RemoveItem } from "../../types/functions_type";
 
 interface FormProps {
 	cv: CV;
-	handleInputChange: (
-		e: FormEvent<HTMLDivElement>,
-		section: "personalDetails" | "education" | "experience"
-	) => void;
-	handleAddItem: (section: "education" | "experience") => void;
-	handleRemoveItem: (index: number, section: "education" | "experience") => void;
+	handleInputChange: InputChange;
+	handleAddItem: AddItem;
+	handleRemoveItem: RemoveItem;
 }
 
 const Form = ({ cv, handleInputChange, handleAddItem, handleRemoveItem }: FormProps) => {

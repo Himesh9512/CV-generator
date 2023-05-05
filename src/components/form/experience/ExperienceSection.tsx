@@ -1,17 +1,14 @@
-import { FormEvent } from "react";
-import { Experience } from "../../../interfaces/cv_interface";
+import { Experience } from "../../../types/cv_interface";
 import SectionWrapper from "../SectionWrapper";
 import ExperienceItem from "./ExperienceItem";
 import Button from "@mui/material/Button";
+import { AddItem, InputChange, RemoveItem } from "../../../types/functions_type";
 
 interface ExperienceProps {
 	experience: Experience[];
-	handleInputChange: (
-		e: FormEvent<HTMLDivElement>,
-		section: "personalDetails" | "education" | "experience"
-	) => void;
-	handleAddItem: (section: "education" | "experience") => void;
-	handleRemoveItem: (index: number, section: "education" | "experience") => void;
+	handleInputChange: InputChange;
+	handleAddItem: AddItem;
+	handleRemoveItem: RemoveItem;
 }
 
 const ExperienceSection = ({
