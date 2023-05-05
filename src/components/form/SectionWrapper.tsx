@@ -9,9 +9,12 @@ interface SectionProps {
 const SectionWrapper = ({ title, children }: SectionProps) => {
 	return (
 		<Paper
-			elevation={4}
+			elevation={3}
 			sx={{
 				padding: 2,
+				display: "flex",
+				flexDirection: "column",
+				gap: 1,
 			}}>
 			<Typography variant="h5" component="h2" marginBottom={2}>
 				{title}

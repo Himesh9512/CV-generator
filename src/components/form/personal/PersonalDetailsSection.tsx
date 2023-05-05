@@ -73,7 +73,7 @@ const PersonalDetailsSection = ({ personalDetails }: PersonalDetailsProps) => {
 				label="Summary"
 				variant="outlined"
 				size="small"
-				placeholder="12345-67890"
+				placeholder="summray..."
 				margin="dense"
 				value={summary}
 			/>
