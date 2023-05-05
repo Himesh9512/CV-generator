@@ -1,7 +1,9 @@
-import { Experience } from "../../../types/cv_interface";
 import SectionWrapper from "../SectionWrapper";
 import ExperienceItem from "./ExperienceItem";
+
 import Button from "@mui/material/Button";
+
+import { Experience } from "../../../types/cv_interface";
 import { AddItem, InputChange, RemoveItem } from "../../../types/functions_type";
 
 interface ExperienceProps {
@@ -28,7 +30,11 @@ const ExperienceSection = ({
 					handleRemoveItem={handleRemoveItem}
 				/>
 			))}
-			<Button variant="contained" color="success">
+			<Button
+				variant="contained"
+				color="primary"
+				sx={{ alignSelf: "end", width: 120 }}
+				onClick={() => handleAddItem("experience")}>
 				ADD
 			</Button>
 		</SectionWrapper>

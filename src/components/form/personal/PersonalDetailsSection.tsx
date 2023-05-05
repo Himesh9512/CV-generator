@@ -1,7 +1,8 @@
-import { PersonalDetails } from "../../../types/cv_interface";
 import SectionWrapper from "../SectionWrapper";
 
 import TextField from "@mui/material/TextField";
+
+import { PersonalDetails } from "../../../types/cv_interface";
 import { InputChange } from "../../../types/functions_type";
 
 interface PersonalDetailsProps {

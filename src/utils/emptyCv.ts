@@ -1,3 +1,4 @@
+import { v4 as uuidv4 } from "uuid";
 import { CV } from "../types/cv_interface";
 
 export const emptyCv: CV = {
@@ -9,6 +10,6 @@ export const emptyCv: CV = {
 		phone: "",
 		summary: "",
 	},
-	education: [{ id: "", course: "", institute: "", from: "", to: "", description: "" }],
-	experience: [{ id: "", position: "", company: "", from: "", to: "", description: "" }],
+	education: [{ id: uuidv4(), course: "", institute: "", from: "", to: "", description: "" }],
+	experience: [{ id: uuidv4(), position: "", company: "", from: "", to: "", description: "" }],
 };

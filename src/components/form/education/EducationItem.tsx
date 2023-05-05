@@ -86,7 +86,11 @@ const EducationItem = ({
 				value={description}
 				onInput={(e) => handleInputChange(e, "education", index)}
 			/>
-			<Button variant="contained" color="error">
+			<Button
+				sx={{ width: 120, alignSelf: "end" }}
+				variant="contained"
+				color="error"
+				onClick={() => handleRemoveItem(id, "education")}>
 				remove
 			</Button>
 		</Box>

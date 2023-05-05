@@ -29,7 +29,11 @@ const EducationSection = ({
 					handleRemoveItem={handleRemoveItem}
 				/>
 			))}
-			<Button variant="contained" color="success">
+			<Button
+				variant="contained"
+				color="primary"
+				sx={{ alignSelf: "end", width: 120 }}
+				onClick={() => handleAddItem("education")}>
 				ADD
 			</Button>
 		</SectionWrapper>

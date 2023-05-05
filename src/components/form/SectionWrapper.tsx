@@ -1,5 +1,6 @@
 import Typography from "@mui/material/Typography";
 import Paper from "@mui/material/Paper";
+
 import { ReactNode } from "react";
 
 interface SectionProps {

@@ -86,7 +86,15 @@ const ExperienceItem = ({
 				value={description}
 				onInput={(e) => handleInputChange(e, "experience", index)}
 			/>
-			<Button variant="contained" color="error">
+			<Button
+				sx={{
+					width: 120,
+					alignSelf: "end",
+				}}
+				component="button"
+				variant="contained"
+				color="error"
+				onClick={() => handleRemoveItem(id, "experience")}>
 				remove
 			</Button>
 		</Box>

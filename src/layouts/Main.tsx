@@ -3,10 +3,11 @@ import Form from "../components/form/Form";
 import Grid from "@mui/material/Grid";
 import Container from "@mui/material/Container";
 
-import { FormEvent, useState } from "react";
+import { useState } from "react";
+
+import { emptyCv } from "../utils/emptyCv";
 
 import { CV } from "../types/cv_interface";
-import { emptyCv } from "../utils/emptyCv";
 import { InputChange, AddItem, RemoveItem } from "../types/functions_type";
 
 const Main = () => {
