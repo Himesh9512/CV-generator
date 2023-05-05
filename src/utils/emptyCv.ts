@@ -9,6 +9,6 @@ export const emptyCv: CV = {
 		phone: "",
 		summary: "",
 	},
-	education: [],
-	experience: [],
+	education: [{ id: "", course: "", institute: "", from: "", to: "", description: "" }],
+	experience: [{ id: "", position: "", company: "", from: "", to: "", description: "" }],
 };

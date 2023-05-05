@@ -1,3 +1,4 @@
+import { FormEvent } from "react";
 import { PersonalDetails } from "../../../interfaces/cv_interface";
 import SectionWrapper from "../SectionWrapper";
 
@@ -5,9 +6,13 @@ import TextField from "@mui/material/TextField";
 
 interface PersonalDetailsProps {
 	personalDetails: PersonalDetails;
+	handleInputChange: (
+		e: FormEvent<HTMLDivElement>,
+		section: "personalDetails" | "education" | "experience"
+	) => void;
 }
 
-const PersonalDetailsSection = ({ personalDetails }: PersonalDetailsProps) => {
+const PersonalDetailsSection = ({ personalDetails, handleInputChange }: PersonalDetailsProps) => {
 	const { firstName, lastName, title, email, phone, summary }: PersonalDetails = personalDetails;
 	return (
 		<SectionWrapper title="Personal Details">
@@ -21,6 +26,7 @@ const PersonalDetailsSection = ({ personalDetails }: PersonalDetailsProps) => {
 				margin="dense"
 				type="text"
 				value={firstName}
+				onInput={(e) => handleInputChange(e, "personalDetails")}
 			/>
 			<TextField
 				fullWidth
@@ -32,6 +38,7 @@ const PersonalDetailsSection = ({ personalDetails }: PersonalDetailsProps) => {
 				margin="dense"
 				type="text"
 				value={lastName}
+				onInput={(e) => handleInputChange(e, "personalDetails")}
 			/>
 			<TextField
 				fullWidth
@@ -43,6 +50,7 @@ const PersonalDetailsSection = ({ personalDetails }: PersonalDetailsProps) => {
 				margin="dense"
 				type="text"
 				value={title}
+				onInput={(e) => handleInputChange(e, "personalDetails")}
 			/>
 			<TextField
 				fullWidth
@@ -54,6 +62,7 @@ const PersonalDetailsSection = ({ personalDetails }: PersonalDetailsProps) => {
 				margin="dense"
 				type="email"
 				value={email}
+				onInput={(e) => handleInputChange(e, "personalDetails")}
 			/>
 			<TextField
 				fullWidth
@@ -65,6 +74,7 @@ const PersonalDetailsSection = ({ personalDetails }: PersonalDetailsProps) => {
 				margin="dense"
 				type="tel"
 				value={phone}
+				onInput={(e) => handleInputChange(e, "personalDetails")}
 			/>
 			<TextField
 				multiline
@@ -76,6 +86,7 @@ const PersonalDetailsSection = ({ personalDetails }: PersonalDetailsProps) => {
 				placeholder="summray..."
 				margin="dense"
 				value={summary}
+				onInput={(e) => handleInputChange(e, "personalDetails")}
 			/>
 		</SectionWrapper>
 	);

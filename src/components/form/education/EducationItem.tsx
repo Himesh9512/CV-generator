@@ -3,12 +3,24 @@ import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 
 import { Education } from "../../../interfaces/cv_interface";
+import { FormEvent } from "react";
 
 interface EducationProps {
+	index: number;
 	educationItem: Education;
+	handleInputChange: (
+		e: FormEvent<HTMLDivElement>,
+		section: "personalDetails" | "education" | "experience"
+	) => void;
+	handleRemoveItem: (index: number, section: "education" | "experience") => void;
 }
 
-const EducationItem = ({ educationItem }: EducationProps) => {
+const EducationItem = ({
+	index,
+	educationItem,
+	handleInputChange,
+	handleRemoveItem,
+}: EducationProps) => {
 	const { id, course, institute, from, to, description }: Education = educationItem;
 	return (
 		<Box
@@ -26,6 +38,7 @@ const EducationItem = ({ educationItem }: EducationProps) => {
 				margin="dense"
 				type="text"
 				value={course}
+				onInput={(e) => handleInputChange(e, "education")}
 			/>
 			<TextField
 				fullWidth
@@ -37,6 +50,7 @@ const EducationItem = ({ educationItem }: EducationProps) => {
 				margin="dense"
 				type="text"
 				value={institute}
+				onInput={(e) => handleInputChange(e, "education")}
 			/>
 			<TextField
 				fullWidth
@@ -48,6 +62,7 @@ const EducationItem = ({ educationItem }: EducationProps) => {
 				margin="dense"
 				type="text"
 				value={from}
+				onInput={(e) => handleInputChange(e, "education")}
 			/>
 			<TextField
 				fullWidth
@@ -59,6 +74,7 @@ const EducationItem = ({ educationItem }: EducationProps) => {
 				margin="dense"
 				type="text"
 				value={to}
+				onInput={(e) => handleInputChange(e, "education")}
 			/>
 			<TextField
 				multiline
@@ -71,9 +87,10 @@ const EducationItem = ({ educationItem }: EducationProps) => {
 				margin="normal"
 				type="text"
 				value={description}
+				onInput={(e) => handleInputChange(e, "education")}
 			/>
 			<Button variant="contained" color="error">
-				delete
+				remove
 			</Button>
 		</Box>
 	);
