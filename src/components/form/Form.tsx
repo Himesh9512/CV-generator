@@ -1,3 +1,4 @@
+import TopSection from "./TopSection";
 import PersonalDetailsSection from "./personal/PersonalDetailsSection";
 import EducationSection from "./education/EducationSection";
 import ExperienceSection from "./experience/ExperienceSection";
@@ -14,13 +15,23 @@ interface FormProps {
 	handleInputChange: InputChange;
 	handleAddItem: AddItem;
 	handleRemoveItem: RemoveItem;
+	handleResetCv: () => void;
+	handleLoadExample: () => void;
 }
 
-const Form = ({ cv, handleInputChange, handleAddItem, handleRemoveItem }: FormProps) => {
+const Form = ({
+	cv,
+	handleInputChange,
+	handleAddItem,
+	handleRemoveItem,
+	handleResetCv,
+	handleLoadExample,
+}: FormProps) => {
 	const { personalDetails, education, experience }: CV = cv;
 	return (
-		<Box component="div" padding={2}>
+		<Box component="div" padding={2} maxWidth={700}>
 			<Stack direction="column" divider={<Divider orientation="horizontal" flexItem />} spacing={2}>
+				<TopSection handleResetCv={handleResetCv} handleLoadExample={handleLoadExample} />
 				<PersonalDetailsSection
 					personalDetails={personalDetails}
 					handleInputChange={handleInputChange}

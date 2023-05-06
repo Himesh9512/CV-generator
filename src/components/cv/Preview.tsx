@@ -13,8 +13,14 @@ interface CvProps {
 const Cv = ({ cv }: CvProps) => {
 	const { personalDetails, education, experience }: CV = cv;
 	return (
-		<Box padding={2} component="div">
-			<Paper elevation={3} sx={{ paddingBottom: 20 }}>
+		<Box padding={2} component="div" maxWidth={700}>
+			<Paper
+				elevation={3}
+				sx={{
+					paddingBottom: 20,
+					border: "1px solid black",
+					minWidth: "fit-content",
+				}}>
 				<Header
 					firstName={personalDetails.firstName}
 					lastName={personalDetails.lastName}
@@ -22,7 +28,7 @@ const Cv = ({ cv }: CvProps) => {
 					email={personalDetails.email}
 					phone={personalDetails.phone}
 				/>
-				<Container sx={{ width: 600 }}>
+				<Container sx={{ minWidth: 600 }}>
 					<Body summary={personalDetails.summary} education={education} experience={experience} />
 				</Container>
 			</Paper>

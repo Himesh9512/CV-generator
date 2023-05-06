@@ -2,7 +2,7 @@ import Form from "../components/form/Form";
 import Preview from "../components/cv/Preview";
 
 import Grid from "@mui/material/Grid";
-import Container from "@mui/material/Container";
+import Box from "@mui/material/Box";
 
 import { useEffect, useState } from "react";
 
@@ -93,22 +93,30 @@ const Main = () => {
 		}));
 	};
 
+	// Reset/Clear the Cv data
+	const handleResetCv = (): void => setCvState(emptyCv);
+
+	// Load example data
+	const handleLoadExample = (): void => setCvState(exampleCv);
+
 	return (
-		<Container>
+		<Box marginX={10}>
 			<Grid container spacing={2}>
-				<Grid item xs={5}>
+				<Grid item xs={6}>
 					<Form
 						cv={cvState}
 						handleInputChange={handleInputChange}
 						handleAddItem={handleAddItem}
 						handleRemoveItem={handleRemoveItem}
+						handleResetCv={handleResetCv}
+						handleLoadExample={handleLoadExample}
 					/>
 				</Grid>
-				<Grid item xs={7}>
+				<Grid item xs={6}>
 					<Preview cv={cvState} />
 				</Grid>
 			</Grid>
-		</Container>
+		</Box>
 	);
 };
 
