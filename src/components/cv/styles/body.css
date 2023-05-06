@@ -1,0 +1,27 @@
+.body {
+	padding-bottom: 40px 0;
+	text-align: justify;
+}
+
+.body-section {
+	margin: 30px 0;
+}
+
+.section-item {
+	display: flex;
+	margin-bottom: 20px;
+}
+
+.section-date {
+	font-size: 13px;
+	text-transform: uppercase;
+	flex: 1;
+}
+
+.section-body {
+	flex: 4;
+}
+
+h4 {
+	margin-bottom: 30px;
+}

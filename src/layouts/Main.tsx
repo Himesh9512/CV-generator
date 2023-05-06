@@ -1,5 +1,5 @@
 import Form from "../components/form/Form";
-import Cv from "../components/cv/Cv";
+import Preview from "../components/cv/Preview";
 
 import Grid from "@mui/material/Grid";
 import Container from "@mui/material/Container";
@@ -90,8 +90,8 @@ const Main = () => {
 
 	return (
 		<Container>
-			<Grid container spacing={4}>
-				<Grid item xs={6}>
+			<Grid container spacing={2}>
+				<Grid item xs={5}>
 					<Form
 						cv={cvState}
 						handleInputChange={handleInputChange}
@@ -99,8 +99,8 @@ const Main = () => {
 						handleRemoveItem={handleRemoveItem}
 					/>
 				</Grid>
-				<Grid item xs={6}>
-					<Cv cv={cvState} />
+				<Grid item xs={7}>
+					<Preview cv={cvState} />
 				</Grid>
 			</Grid>
 		</Container>
