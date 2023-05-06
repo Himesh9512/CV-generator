@@ -10,6 +10,8 @@ import { emptyCv } from "../utils/emptyCv";
 import { CV } from "../types/cv_interface";
 import { InputChange, AddItem, RemoveItem } from "../types/functions_type";
 
+import { v4 as uuidv4 } from "uuid";
+
 const Main = () => {
 	const [cvState, setCvState] = useState<CV>(emptyCv);
 
@@ -42,12 +44,47 @@ const Main = () => {
 
 	// handle the add of new item in education/experience section
 	const handleAddItem: AddItem = (section): void => {
-		console.log("section: ", section);
+		if (section == "education") {
+			const id: string = uuidv4();
+			setCvState((prevState) => ({
+				...prevState,
+				education: [
+					...prevState.education,
+					{
+						id,
+						course: "",
+						institute: "",
+						from: "",
+						to: "",
+						description: "",
+					},
+				],
+			}));
+		} else {
+			const id: string = uuidv4();
+			setCvState((prevState) => ({
+				...prevState,
+				experience: [
+					...prevState.experience,
+					{
+						id,
+						position: "",
+						company: "",
+						from: "",
+						to: "",
+						description: "",
+					},
+				],
+			}));
+		}
 	};
 
 	// handle the add of new item in education/experience section
 	const handleRemoveItem: RemoveItem = (id, section): void => {
-		console.log("id: ", id, " section: ", section);
+		setCvState((prevState) => ({
+			...prevState,
+			[section]: [...prevState[section]].filter((item) => item.id !== id),
+		}));
 	};
 
 	return (
