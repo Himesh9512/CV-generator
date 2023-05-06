@@ -4,17 +4,22 @@ import Preview from "../components/cv/Preview";
 import Grid from "@mui/material/Grid";
 import Container from "@mui/material/Container";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { emptyCv } from "../utils/emptyCv";
 
 import { CV } from "../types/cv_interface";
+import { exampleCv } from "../utils/example";
 import { InputChange, AddItem, RemoveItem } from "../types/functions_type";
 
 import { v4 as uuidv4 } from "uuid";
 
 const Main = () => {
 	const [cvState, setCvState] = useState<CV>(emptyCv);
+
+	useEffect(() => {
+		setCvState(exampleCv);
+	}, []);
 
 	// handle all input field changes in form
 	const handleInputChange: InputChange = (e, section, index) => {
