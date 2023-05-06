@@ -1,4 +1,5 @@
 import Form from "../components/form/Form";
+import Cv from "../components/cv/Cv";
 
 import Grid from "@mui/material/Grid";
 import Container from "@mui/material/Container";
@@ -99,7 +100,7 @@ const Main = () => {
 					/>
 				</Grid>
 				<Grid item xs={6}>
-					cv
+					<Cv cv={cvState} />
 				</Grid>
 			</Grid>
 		</Container>
