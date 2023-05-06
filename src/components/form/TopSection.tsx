@@ -6,9 +6,10 @@ import Box from "@mui/material/Box";
 interface TopSectionProps {
 	handleResetCv: () => void;
 	handleLoadExample: () => void;
+	handlePrint: () => void;
 }
 
-const TopSection = ({ handleResetCv, handleLoadExample }: TopSectionProps) => {
+const TopSection = ({ handleResetCv, handleLoadExample, handlePrint }: TopSectionProps) => {
 	return (
 		<SectionWrapper title="CV GENERATOR">
 			<Box display="flex" justifyContent="space-around" width="100%">
@@ -18,7 +19,9 @@ const TopSection = ({ handleResetCv, handleLoadExample }: TopSectionProps) => {
 				<Button variant="contained" onClick={handleLoadExample}>
 					EXAMPLE
 				</Button>
-				<Button variant="contained">PRINT</Button>
+				<Button variant="contained" onClick={handlePrint}>
+					PRINT
+				</Button>
 			</Box>
 		</SectionWrapper>
 	);

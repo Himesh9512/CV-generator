@@ -4,7 +4,7 @@ import Preview from "../components/cv/Preview";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 import { emptyCv } from "../utils/emptyCv";
 
@@ -13,9 +13,11 @@ import { exampleCv } from "../utils/example";
 import { InputChange, AddItem, RemoveItem } from "../types/functions_type";
 
 import { v4 as uuidv4 } from "uuid";
+import { useReactToPrint } from "react-to-print";
 
 const Main = () => {
 	const [cvState, setCvState] = useState<CV>(emptyCv);
+	const componentRef = useRef(null);
 
 	useEffect(() => {
 		setCvState(exampleCv);
@@ -99,6 +101,9 @@ const Main = () => {
 	// Load example data
 	const handleLoadExample = (): void => setCvState(exampleCv);
 
+	// Print the CV
+	const handlePrint = useReactToPrint({ content: () => componentRef.current });
+
 	return (
 		<Box marginX={10}>
 			<Grid container spacing={2}>
@@ -110,10 +115,11 @@ const Main = () => {
 						handleRemoveItem={handleRemoveItem}
 						handleResetCv={handleResetCv}
 						handleLoadExample={handleLoadExample}
+						handlePrint={handlePrint}
 					/>
 				</Grid>
 				<Grid item xs={6}>
-					<Preview cv={cvState} />
+					<Preview cv={cvState} ref={componentRef} />
 				</Grid>
 			</Grid>
 		</Box>

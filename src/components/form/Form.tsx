@@ -17,6 +17,7 @@ interface FormProps {
 	handleRemoveItem: RemoveItem;
 	handleResetCv: () => void;
 	handleLoadExample: () => void;
+	handlePrint: () => void;
 }
 
 const Form = ({
@@ -26,12 +27,17 @@ const Form = ({
 	handleRemoveItem,
 	handleResetCv,
 	handleLoadExample,
+	handlePrint,
 }: FormProps) => {
 	const { personalDetails, education, experience }: CV = cv;
 	return (
 		<Box component="div" padding={2} maxWidth={700}>
 			<Stack direction="column" divider={<Divider orientation="horizontal" flexItem />} spacing={2}>
-				<TopSection handleResetCv={handleResetCv} handleLoadExample={handleLoadExample} />
+				<TopSection
+					handleResetCv={handleResetCv}
+					handleLoadExample={handleLoadExample}
+					handlePrint={handlePrint}
+				/>
 				<PersonalDetailsSection
 					personalDetails={personalDetails}
 					handleInputChange={handleInputChange}
