@@ -105,7 +105,7 @@ const Main = () => {
 	const handlePrint = useReactToPrint({ content: () => componentRef.current });
 
 	return (
-		<Box marginX={{ xs: 0, sm: 10, md: 20, lg: 0, xl: 10 }}>
+		<Box marginX={{ xs: 0, sm: 10, md: 20, lg: 0, xl: 10 }} marginBottom={6}>
 			<Grid container spacing={2} columns={{ xs: 6, lg: 12 }}>
 				<Grid item xs={6}>
 					<Form
