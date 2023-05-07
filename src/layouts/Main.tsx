@@ -105,8 +105,8 @@ const Main = () => {
 	const handlePrint = useReactToPrint({ content: () => componentRef.current });
 
 	return (
-		<Box marginX={10}>
-			<Grid container spacing={2}>
+		<Box marginX={{ xs: 0, sm: 10, md: 25, lg: 0 }}>
+			<Grid container spacing={2} columns={{ xs: 6, lg: 12 }}>
 				<Grid item xs={6}>
 					<Form
 						cv={cvState}

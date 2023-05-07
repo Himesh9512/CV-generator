@@ -31,7 +31,7 @@ const Form = ({
 }: FormProps) => {
 	const { personalDetails, education, experience }: CV = cv;
 	return (
-		<Box component="div" padding={2} maxWidth={700}>
+		<Box component="div" padding={2}>
 			<Stack direction="column" divider={<Divider orientation="horizontal" flexItem />} spacing={2}>
 				<TopSection
 					handleResetCv={handleResetCv}

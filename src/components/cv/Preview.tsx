@@ -14,7 +14,7 @@ interface CvProps {
 const Cv = forwardRef(({ cv }: CvProps, ref) => {
 	const { personalDetails, education, experience }: CV = cv;
 	return (
-		<Box padding={2} component="div" maxWidth={700} ref={ref}>
+		<Box padding={2} component="div" ref={ref}>
 			<Paper
 				elevation={3}
 				sx={{
@@ -29,7 +29,7 @@ const Cv = forwardRef(({ cv }: CvProps, ref) => {
 					email={personalDetails.email}
 					phone={personalDetails.phone}
 				/>
-				<Container sx={{ minWidth: 600 }}>
+				<Container>
 					<Body summary={personalDetails.summary} education={education} experience={experience} />
 				</Container>
 			</Paper>
