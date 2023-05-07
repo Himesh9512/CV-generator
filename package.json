@@ -1,7 +1,7 @@
 {
 	"name": "cv-generator",
 	"private": true,
-	"homepage": "https://Himesh9512.github.io/CV-generator",
+	"homepage": "https://himesh9512.github.io/CV-generator",
 	"version": "0.0.0",
 	"type": "module",
 	"scripts": {

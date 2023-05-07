@@ -13,13 +13,13 @@ const TopSection = ({ handleResetCv, handleLoadExample, handlePrint }: TopSectio
 	return (
 		<SectionWrapper title="CV GENERATOR">
 			<Box display="flex" justifyContent="space-around" width="100%">
-				<Button variant="contained" onClick={handleResetCv}>
+				<Button variant="outlined" color="inherit" onClick={handleResetCv}>
 					RESET
 				</Button>
-				<Button variant="contained" onClick={handleLoadExample}>
+				<Button variant="outlined" color="inherit" onClick={handleLoadExample}>
 					EXAMPLE
 				</Button>
-				<Button variant="contained" onClick={handlePrint}>
+				<Button variant="outlined" color="inherit" onClick={handlePrint}>
 					PRINT
 				</Button>
 			</Box>
