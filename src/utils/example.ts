@@ -19,7 +19,7 @@ export const exampleCv: CV = {
 			from: "2019",
 			to: "2022",
 			description:
-				"Studying for a B.Tech degree at a top university can be a challenging yet rewarding experience. The curriculum is designed to provide students with a strong foundation in engineering principles and practical skills, along with opportunities for hands-on projects and research.",
+				"Studying for a B.Tech degree at a Best university can be a challenging yet rewarding experience. The curriculum is designed to provide students with a strong foundation in engineering principles and practical skills.",
 		},
 		{
 			id: uuidv4(),
